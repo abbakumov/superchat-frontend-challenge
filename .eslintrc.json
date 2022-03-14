@@ -11,11 +11,16 @@
     "rules": {
         "@typescript-eslint/indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
         "react/jsx-props-no-spreading": 0,
         "react/function-component-definition": [
             2,
             { "namedComponents": ["function-declaration", "arrow-function"] }
         ],
-        "@typescript-eslint/comma-dangle": 2
+        "@typescript-eslint/comma-dangle": 2,
+        "jsx-a11y/label-has-associated-control": [
+            2,
+            { "assert": "either" }
+        ]
     }
 }
