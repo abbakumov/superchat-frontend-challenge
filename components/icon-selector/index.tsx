@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-import { ICON_CODES_LIST } from '../../common/iconCodes';
+import { ICON_CODES_LIST } from '../../common/icon-codes';
 import InputLabel from '../input-label';
 import IconSelectorItem from './item';
 

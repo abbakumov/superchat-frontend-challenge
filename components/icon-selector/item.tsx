@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import cn from 'classnames';
 
-import { ICON_CODES_TO_EMOJI } from '../../common/iconCodes';
+import { ICON_CODES_TO_EMOJI } from '../../common/icon-codes';
 
 type IconSelectorItemProps = {
     code: number,
@@ -13,7 +13,7 @@ const IconSelectorItem: FunctionComponent<IconSelectorItemProps> = (props: IconS
     const { code, isActive } = props;
 
     const className = cn(
-        'bg-transparent hover:border-gray-500 border border-gray-300 text-white font-bold py-2 px-8 rounded',
+        'bg-transparent hover:border-gray-500 border border-gray-300 text-white font-bold rounded w-20 h-10',
         { 'border-gray-500': isActive },
     );
 
