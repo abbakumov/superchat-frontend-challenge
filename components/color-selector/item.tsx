@@ -1,16 +1,16 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useCallback } from 'react';
 import cn from 'classnames';
-
-// import { COLOR_CODE_TO_CLASSNAME } from '../../common/bg-colors';
 
 type ColorSelectorItemProps = {
     code: number,
     isActive: boolean,
+    changeColor: (code: number) => void
 };
 
 // eslint-disable-next-line max-len
 const ColorSelectorItem: FunctionComponent<ColorSelectorItemProps> = (props: ColorSelectorItemProps) => {
-    const { code, isActive } = props;
+    const { code, isActive, changeColor } = props;
+    const changeColorCallback = useCallback(() => { changeColor(code); }, [changeColor, code]);
 
     const COLOR_CODE_TO_CLASSNAME: { [id: number]: string } = {
         1: 'bg-gradient-to-r from-lime-100 to-orange-100',
@@ -27,7 +27,7 @@ const ColorSelectorItem: FunctionComponent<ColorSelectorItemProps> = (props: Col
     );
 
     // eslint-disable-next-line jsx-a11y/control-has-associated-label
-    return (<button type="button" className={className} />);
+    return (<button type="button" className={className} onClick={changeColorCallback} />);
 };
 
 export default ColorSelectorItem;
